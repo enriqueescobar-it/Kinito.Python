@@ -1,4 +1,4 @@
-from Section02_Builder.HtmlBuilder import HtmlBuilder
+from Section02_Builder.Builder.HtmlBuilder import HtmlBuilder
 
 
 class HtmlElement:

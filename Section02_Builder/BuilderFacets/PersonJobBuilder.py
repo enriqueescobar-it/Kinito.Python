@@ -1,4 +1,4 @@
-from Section02_Builder.PersonBuilder import PersonBuilder
+from Section02_Builder.BuilderFacets.PersonBuilder import PersonBuilder
 
 
 class PersonJobBuilder(PersonBuilder):

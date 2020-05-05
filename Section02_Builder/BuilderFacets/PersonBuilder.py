@@ -1,6 +1,6 @@
-from Section02_Builder.PersonAddressBuilder import PersonAddressBuilder
-from Section02_Builder.PersonJobBuilder import PersonJobBuilder
-from Section02_Builder.Person import Person
+from Section02_Builder.BuilderFacets.PersonAddressBuilder import PersonAddressBuilder
+from Section02_Builder.BuilderFacets.PersonJobBuilder import PersonJobBuilder
+from Section02_Builder.BuilderFacets.Person import Person
 
 
 class PersonBuilder:  # facade

@@ -1,4 +1,4 @@
-from Section02_Builder.HtmlElement import HtmlElement
+from Section02_Builder.Builder.HtmlElement import HtmlElement
 
 # if you want to build a simple HTML paragraph using a list
 hello = 'hello'
