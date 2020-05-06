@@ -2,7 +2,7 @@ from enum import Enum, auto
 
 
 class HotDrinkMachine:
-    class AvailableDrink(Enum):  # violates OCP
+    class AvailableDrinkEnum(Enum):  # violates OCP
         COFFEE = auto()
         TEA = auto()
 
@@ -12,7 +12,7 @@ class HotDrinkMachine:
     def __init__(self):
         if not self.initialized:
             self.initialized = True
-            for d in self.AvailableDrink:
+            for d in self.AvailableDrinkEnum:
                 name = d.name[0] + d.name[1:].lower()
                 factory_name = name + 'Factory'
                 factory_instance = eval(factory_name)()

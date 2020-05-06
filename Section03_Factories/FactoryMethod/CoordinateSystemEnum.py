@@ -1,6 +1,6 @@
 from enum import Enum
 
 
-class CoordinateSystem(Enum):
+class CoordinateSystemEnum(Enum):
     CARTESIAN = 1
     POLAR = 2

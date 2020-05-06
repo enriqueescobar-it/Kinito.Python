@@ -1,6 +1,6 @@
 from math import sin, cos
 
-from Section03_Factories.FactoryMethod.CoordinateSystem import CoordinateSystem
+from Section03_Factories.FactoryMethod.CoordinateSystemEnum import CoordinateSystemEnum
 
 
 class Point:
@@ -14,11 +14,11 @@ class Point:
     # redeclaration won't work
     # def __init__(self, rho, theta):
 
-    def __init__(self, a, b, system=CoordinateSystem.CARTESIAN):
-        if system == CoordinateSystem.CARTESIAN:
+    def __init__(self, a, b, system: CoordinateSystemEnum = CoordinateSystemEnum.CARTESIAN):
+        if system == CoordinateSystemEnum.CARTESIAN:
             self.x = a
             self.y = b
-        elif system == CoordinateSystem.POLAR:
+        elif system == CoordinateSystemEnum.POLAR:
             self.x = a * sin(b)
             self.y = a * cos(b)
 

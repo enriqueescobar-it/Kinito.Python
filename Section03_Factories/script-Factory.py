@@ -1,4 +1,4 @@
-from Section03_Factories.RegularFactory.CoordinateSystem import CoordinateSystem
+from Section03_Factories.RegularFactory.CoordinateSystemEnum import CoordinateSystemEnum
 from Section03_Factories.RegularFactory.Point import Point
 
 
@@ -6,7 +6,7 @@ from Section03_Factories.RegularFactory.Point import Point
 from Section03_Factories.RegularFactory.PointFactory import PointFactory
 
 if __name__ == '__main__':
-    p1 = Point(2, 3, CoordinateSystem.CARTESIAN)
+    p1 = Point(2, 3, CoordinateSystemEnum.CARTESIAN)
     p2 = PointFactory.new_cartesian_point(1, 2)
     # or you can expose factory through the type
     p3 = Point.Factory.new_cartesian_point(5, 6)
