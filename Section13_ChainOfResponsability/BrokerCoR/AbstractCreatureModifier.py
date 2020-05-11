@@ -1,7 +1,7 @@
 from abc import ABC
 
 
-class CreatureModifier(ABC):
+class AbstractCreatureModifier(ABC):
     def __init__(self, game, creature):
         self.creature = creature
         self.game = game
