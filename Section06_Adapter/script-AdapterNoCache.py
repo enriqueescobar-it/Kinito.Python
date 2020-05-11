@@ -8,7 +8,7 @@ def draw_point(p):
 
 # ^^ you are given this
 # vv you are working with this
-def draw(rcs):
+def draw(rcs: []):
     print("\n\n--- Drawing some stuff ---\n")
     for rc in rcs:
         for line in rc:
