@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Command:
+class AbstractCommand:
     class Action(Enum):
         DEPOSIT = 0
         WITHDRAW = 1

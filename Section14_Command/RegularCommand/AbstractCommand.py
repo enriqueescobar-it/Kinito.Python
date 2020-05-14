@@ -1,7 +1,7 @@
 from abc import ABC
 
 
-class Command(ABC):
+class AbstractCommand(ABC):
     def invoke(self):
         pass
 
