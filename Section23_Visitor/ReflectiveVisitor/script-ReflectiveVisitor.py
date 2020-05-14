@@ -1,5 +1,24 @@
 from Section23_Visitor.ReflectiveVisitor.AdditionExpression import AdditionExpression
 from Section23_Visitor.ReflectiveVisitor.DoubleExpression import DoubleExpression
+from Section23_Visitor.ReflectiveVisitor.AbstractExpression import AbstractExpression
+
+
+class ExpressionPrinter:
+    @staticmethod
+    def print(e, buffer):
+        """ Will fail silently on a missing case. """
+        if isinstance(e, DoubleExpression):
+            buffer.append(str(e.value))
+        elif isinstance(e, AdditionExpression):
+            buffer.append('(')
+            ExpressionPrinter.print(e.left, buffer)
+            buffer.append('+')
+            ExpressionPrinter.print(e.right, buffer)
+            buffer.append(')')
+
+    AbstractExpression.print = lambda self, b: ExpressionPrinter.print(self, b)
+
+
 # still breaks OCP because new types require M×N modifications
 
 if __name__ == '__main__':
@@ -12,7 +31,10 @@ if __name__ == '__main__':
         )
     )
     buffer = []
+
     # ExpressionPrinter.print(e, buffer)
+
     # IDE might complain here
     e.print(buffer)
+
     print(''.join(buffer))

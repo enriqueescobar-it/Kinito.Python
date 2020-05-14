@@ -1,4 +1,6 @@
 # taken from https://tavianator.com/the-visitor-pattern-in-python/
+from Section23_Visitor.VisitorRefined.AdditionExpression import AdditionExpression
+from Section23_Visitor.VisitorRefined.DoubleExpression import DoubleExpression
 
 
 def _qualname(obj):
@@ -35,27 +37,7 @@ def visitor(arg_type):
         return _visitor_impl
 
     return decorator
-
-
 # ↑↑↑ LIBRARY CODE ↑↑↑
-
-class DoubleExpression:
-    def __init__(self, value):
-        self.value = value
-
-    def accept(self, visitor):
-        visitor.visit(self)
-
-
-class AdditionExpression:
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
-
-    def accept(self, visitor):
-        visitor.visit(self)
-
-
 class ExpressionPrinter:
     def __init__(self):
         self.buffer = []

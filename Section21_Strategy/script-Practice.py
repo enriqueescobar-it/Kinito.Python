@@ -1,37 +1,9 @@
 import math
-import cmath
 from unittest import TestCase
-from abc import ABC
 
-
-class AbstractDiscriminantStrategy(ABC):
-    def calculate_discriminant(self, a, b, c):
-        pass
-
-
-class OrdinaryAbstractDiscriminantStrategy(AbstractDiscriminantStrategy):
-    def calculate_discriminant(self, a, b, c):
-        return b * b - 4 * a * c
-
-
-class RealAbstractDiscriminantStrategy(AbstractDiscriminantStrategy):
-    def calculate_discriminant(self, a, b, c):
-        result = b * b - 4 * a * c
-        return result if result >= 0 else float('nan')
-
-
-class QuadraticEquationSolver:
-    def __init__(self, strategy):
-        self.strategy = strategy
-
-    def solve(self, a, b, c):
-        """ Returns a pair of complex (!) values """
-        disc = complex(self.strategy.calculate_discriminant(a, b, c), 0)
-        root_disc = cmath.sqrt(disc)
-        return (
-            (-b + root_disc) / (2 * a),
-            (-b - root_disc) / (2 * a)
-        )
+from Section21_Strategy.Practice.OrdinaryAbstractDiscriminantStrategy import OrdinaryAbstractDiscriminantStrategy
+from Section21_Strategy.Practice.QuadraticEquationSolver import QuadraticEquationSolver
+from Section21_Strategy.Practice.RealAbstractDiscriminantStrategy import RealAbstractDiscriminantStrategy
 
 
 class Evaluate(TestCase):

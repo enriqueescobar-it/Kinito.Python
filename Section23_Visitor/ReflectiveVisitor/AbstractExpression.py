@@ -1,5 +1,5 @@
 from abc import ABC
 
 
-class Expression(ABC):
+class AbstractExpression(ABC):
     pass
